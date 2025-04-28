@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+const downloadRoute = require("./routes/download");
+app.use("/", downloadRoute);
+
 app.get("/", (req, res) => {
     res.send(`
         <p>API IS RUNNING!</p>
